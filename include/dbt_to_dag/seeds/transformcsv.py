@@ -1,8 +1,8 @@
 import csv
 from pathlib import Path as path
 
-pathToWrite = ('D:/DataAnalysis/DBT_Snowflake_SQL_Airflow_Integration/include/dbt_to_dag/seeds/')
-pathToRead = ('D:/DataAnalysis/DBT_Snowflake_SQL_Airflow_Integration/include/dbt_to_dag/seeds/dataset')
+pathToWrite = ('Path')
+pathToRead = ('Path')
 
 with open(f'{pathToRead}/transactions.csv', 'r', encoding="utf8") as inf, open(f'{pathToWrite}/transformed.csv', 'w',encoding="utf8") as of:
 

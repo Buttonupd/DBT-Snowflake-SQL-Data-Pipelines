@@ -1,0 +1,5 @@
+build-essential
+freetds-dev
+libkrb5-dev
+default-libmysqlclient-dev
+ODBC Driver 18 for SQL Server

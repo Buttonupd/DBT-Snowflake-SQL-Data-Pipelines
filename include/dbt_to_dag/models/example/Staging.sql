@@ -2,7 +2,7 @@
 
 with source_data as (
 
-    SELECT * FROM RecentMockData
+    SELECT business_logic FROM schema_name
 )
 
 select *
