@@ -15,7 +15,7 @@ default_args = {
 @dag(
     schedule="@daily",
     default_args=default_args,
-    catchup=False, dagrun_timeout=timedelta(minutes=10), max_active_tasks=2, max_active_runs=1
+    catchup=False
     )
 
 
@@ -66,8 +66,9 @@ def retail():
                         """
         cursor = conn.cursor()
         records  = cursor.execute(queryStatement)
-        # records = cursor.fetchall()
-        print(records)
+        records = cursor.fetchall()
+        for record in records:
+            return record[0]
     
     sql_Conn()
 
