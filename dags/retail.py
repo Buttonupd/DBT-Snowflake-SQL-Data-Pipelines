@@ -66,9 +66,8 @@ def retail():
                         """
         cursor = conn.cursor()
         records  = cursor.execute(queryStatement)
-        records = cursor.fetchall()
-        for r in records:
-            print(r)
+        # records = cursor.fetchall()
+        print(records)
     
     sql_Conn()
 

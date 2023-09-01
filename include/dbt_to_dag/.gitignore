@@ -2,7 +2,8 @@
 target/
 dbt_packages/
 logs/
-gcp/
+gcp/service_acc.json
+soda/configuration.yml
 
 from airflow import DAG
 from airflow.decorators import task,dag

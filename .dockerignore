@@ -2,17 +2,4 @@ astro
 .git
 .env
 airflow_settings.yaml
-
 pkgs
-build-essential
-freetds-dev
-libkrb5-dev
-default-libmysqlclient-dev
-
-req
-apache-airflow-providers-microsoft-mssql==3.4.2
-apache-airflow-providers-google==10.3.0
-pyodbc
-apache-airflow[async,mssql]
-pymssql
-apache-airflow-providers-odbc
