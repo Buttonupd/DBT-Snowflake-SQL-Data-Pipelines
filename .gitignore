@@ -20,7 +20,6 @@ apache-airflow[async,mssql]
 pymssql
 apache-airflow-providers-odbc
 python-decouple
-opentelemetry-api
 apache-airflow-providers-microsoft-mssql==3.4.2
 
 
