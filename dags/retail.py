@@ -51,6 +51,9 @@ def retail():
         use_native_support=False
     )
 
+    @task.external_python(python='usr/local/airflow/dbt-env/bin/python')
+    
+
     @task(task_id='sqlconn')
     def sql_Conn():
         conn = pymssql.connect(
