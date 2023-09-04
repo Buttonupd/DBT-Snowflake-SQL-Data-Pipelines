@@ -9,6 +9,8 @@ from astro import sql as aql
 from astro.files import File
 from astro.sql.table import Table,Metadata
 from astro.constants import FileType
+from include.dbt_to_dag.soda.check_function import check
+
 default_args = {
     "start_date": datetime(2023, 8, 30)
 }
@@ -52,7 +54,8 @@ def retail():
     )
 
     @task.external_python(python='usr/local/airflow/dbt-env/bin/python')
-    
+    def check_load(scan_name='check_load',checks_path='sources'):
+        return check(scan_name,checks_path)
 
     @task(task_id='sqlconn')
     def sql_Conn():
