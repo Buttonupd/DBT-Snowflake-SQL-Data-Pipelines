@@ -2,9 +2,8 @@
 
 with source_data as (
 
-    SELECT business_logic FROM schema_name
+    SELECT TOP 30000 * FROM raw_imdb
 )
 
 select *
 from source_data
-

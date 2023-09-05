@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+    - name: imdb
+      database: source-datasets
+
+      tables:
+        - name: raw-imdb
