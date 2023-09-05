@@ -1,0 +1,8 @@
+checks for neg_sents:
+  - schema:
+      fail:
+        when required column is missing: [review, sentiment]
+        when wrong column type: 
+          review: string
+          sentiment: integer
+          

@@ -1,2 +1,8 @@
 astronomer-cosmos[dbt-bigquery]
 protobuf
+apache-airflow-providers-google==10.7.0
+apache-airflow[async,mssql]
+pymssql
+apache-airflow-providers-odbc
+python-decouple
+apache-airflow-providers-microsoft-mssql==3.4.2

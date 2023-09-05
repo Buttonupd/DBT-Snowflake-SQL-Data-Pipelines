@@ -1,0 +1,8 @@
+checks for aggregate_imdb:
+  - schema:
+      fail:
+        when required column is missing: [review, sentiment]
+        when wrong column type: 
+          review: string
+          sentiment: integer
+          

@@ -12,18 +12,19 @@ from astro.constants import FileType
 from include.dbt_to_dag import cosmos_config
 from cosmos import DbtTaskGroup
 from cosmos import RenderConfig
-
+from cosmos import LoadMode
 default_args = {
     "start_date": datetime(2023, 8, 30)
 }
 @dag(
     schedule="@daily",
     default_args=default_args,
-    catchup=False
+    catchup=False,
+    tags = 'sentiment_pipeline'
     )
 
 
-def retail():
+def sentiment_pipeline():
     upload_sql_stat = MSSQLToGCSOperator(
     task_id = 'upload_sql_stat',
     sql=config('sql'),
@@ -55,12 +56,6 @@ def retail():
         use_native_support=False
     )
 
-    @task.external_python(python='/usr/local/airflow/soda_env/bin/python')
-    def check_load(scan_name='check_load',checks_path='sources'):
-        from include.dbt_to_dag.soda.check_function import check
-        return check(scan_name,checks_path)
-    check_load()
-
     transform = DbtTaskGroup(
         group_id='transform',
         project_config = cosmos_config.DBT_PROJECT_CONFIG,
@@ -71,6 +66,11 @@ def retail():
         )
     )
 
+    @task.external_python(python='/usr/local/airflow/soda_env/bin/python')
+    def check_load(scan_name='check_load',checks_path='sources'):
+        from include.dbt_to_dag.soda.check_function import check
+        return check(scan_name,checks_path)
+    check_load()
 
     @task(task_id='sqlconn')
     def sql_Conn():
@@ -93,7 +93,7 @@ def retail():
     
     sql_Conn()
 
-retail()
+sentiment_pipeline()
 
 
 
