@@ -9,7 +9,9 @@ from astro import sql as aql
 from astro.files import File
 from astro.sql.table import Table,Metadata
 from astro.constants import FileType
-from include.dbt_to_dag.soda.check_function import check
+from include.dbt_to_dag import cosmos_config
+from cosmos import DbtTaskGroup
+from cosmos import RenderConfig
 
 default_args = {
     "start_date": datetime(2023, 8, 30)
@@ -58,6 +60,17 @@ def retail():
         from include.dbt_to_dag.soda.check_function import check
         return check(scan_name,checks_path)
     check_load()
+
+    transform = DbtTaskGroup(
+        group_id='transform',
+        project_config = cosmos_config.DBT_PROJECT_CONFIG,
+        profile_config = cosmos_config.DBT_CONFIG,
+        render_config=RenderConfig(
+            load_method=LoadMode.DBT_LS,
+            select=['path:models/transform']
+        )
+    )
+
 
     @task(task_id='sqlconn')
     def sql_Conn():
