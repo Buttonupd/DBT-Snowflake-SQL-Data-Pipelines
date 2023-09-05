@@ -53,9 +53,11 @@ def retail():
         use_native_support=False
     )
 
-    @task.external_python(python='usr/local/airflow/dbt-env/bin/python')
+    @task.external_python(python='/usr/local/airflow/soda_env/bin/python')
     def check_load(scan_name='check_load',checks_path='sources'):
+        from include.dbt_to_dag.soda.check_function import check
         return check(scan_name,checks_path)
+    check_load()
 
     @task(task_id='sqlconn')
     def sql_Conn():

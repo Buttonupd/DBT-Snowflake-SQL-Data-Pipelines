@@ -2,7 +2,7 @@
 
 with source_data as (
 
-    SELECT TOP 30000 * FROM raw_imdb
+    SELECT  * FROM {{source('imdb', 'raw_imdb')}}
 )
 
 select *

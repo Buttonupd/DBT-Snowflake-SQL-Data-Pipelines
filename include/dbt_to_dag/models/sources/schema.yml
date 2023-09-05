@@ -2,7 +2,7 @@
 version: 2
 
 models:
-  - name: Staging
+  - name: aggregate_imdb
     description: "A starter dbt model"
     columns:
       - name: id
@@ -11,7 +11,7 @@ models:
           - unique
           - not_null
 
-  - name: Staging_Female
+  - name: neg_sents
     description: "A starter dbt model"
     columns:
       - name: id
@@ -19,3 +19,12 @@ models:
         tests:
           - unique
           - not_null
+  - name: pos_sents
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+

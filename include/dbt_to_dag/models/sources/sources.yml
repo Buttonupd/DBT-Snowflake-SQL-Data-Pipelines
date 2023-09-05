@@ -5,4 +5,4 @@ sources:
       database: source-datasets
 
       tables:
-        - name: raw-imdb
+        - name: raw_imdb
