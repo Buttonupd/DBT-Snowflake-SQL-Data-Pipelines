@@ -2,7 +2,10 @@
 
 with source_data as (
 
-    SELECT  * FROM {{source('imdb', 'raw_imdb')}}
+    SELECT review, sentiment 
+    FROM {{source('imdb', 'raw_imdb')}}
+    GROUP BY sentiment, review
+    ORDER BY sentiment ASC
 )
 
 select *
