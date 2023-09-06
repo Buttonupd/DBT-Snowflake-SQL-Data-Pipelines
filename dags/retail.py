@@ -13,18 +13,22 @@ from include.dbt_to_dag import cosmos_config
 from cosmos import DbtTaskGroup
 from cosmos import RenderConfig
 from cosmos import LoadMode
+from airflow.models.baseoperator import chain
+
 default_args = {
     "start_date": datetime(2023, 8, 30)
 }
+
 @dag(
     schedule="@daily",
     default_args=default_args,
     catchup=False,
-    tags = 'sentiment_pipeline'
+    tags = ['sentiment_pipeline']
     )
 
 
 def sentiment_pipeline():
+
     upload_sql_stat = MSSQLToGCSOperator(
     task_id = 'upload_sql_stat',
     sql=config('sql'),
@@ -56,22 +60,18 @@ def sentiment_pipeline():
         use_native_support=False
     )
 
-    transform = DbtTaskGroup(
-        group_id='transform',
-        project_config = cosmos_config.DBT_PROJECT_CONFIG,
-        profile_config = cosmos_config.DBT_CONFIG,
-        render_config=RenderConfig(
-            load_method=LoadMode.DBT_LS,
-            select=['path:models/transform']
-        )
-    )
 
     @task.external_python(python='/usr/local/airflow/soda_env/bin/python')
     def check_load(scan_name='check_load',checks_path='sources'):
         from include.dbt_to_dag.soda.check_function import check
         return check(scan_name,checks_path)
-    check_load()
+    
 
+    @task.external_python(python='/usr/local/airflow/soda_env/bin/python')
+    def check_transform(scan_name='check_transform',checks_path='transform'):
+        from include.dbt_to_dag.soda.check_function import check
+        return check(scan_name,checks_path)
+    
     @task(task_id='sqlconn')
     def sql_Conn():
         conn = pymssql.connect(
@@ -90,8 +90,25 @@ def sentiment_pipeline():
         records = cursor.fetchall()
         for record in records:
             return record[0]
-    
-    sql_Conn()
+        
+    transform = DbtTaskGroup(
+        group_id='transform',
+        project_config = cosmos_config.DBT_PROJECT_CONFIG,
+        profile_config = cosmos_config.DBT_CONFIG,
+        render_config=RenderConfig(
+            load_method=LoadMode.DBT_LS,
+            select=['path:models/transform']
+        )
+    )
+
+    chain(
+        upload_sql_stat,
+        create_imdb_dataset,
+        upload_idb_dataset,
+        check_load(),
+        transform,
+        check_transform(),
+    )
 
 sentiment_pipeline()
 
