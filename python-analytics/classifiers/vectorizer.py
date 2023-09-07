@@ -6,7 +6,7 @@ import pickle
 # cur_dir = os.path.dirname(__file__)
 stop = pickle.load(open(
 		os.path.join(
-				'pkl_objects',
+				'D:\DataAnalysis\DBT_Snowflake_SQL_Airflow_Integration\python-analytics\pkl_objects',
 				'stopwords.pkl'
 			), 'rb'
 	))
