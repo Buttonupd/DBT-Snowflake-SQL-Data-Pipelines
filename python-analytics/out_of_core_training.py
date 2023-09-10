@@ -60,11 +60,11 @@ vect = HashingVectorizer(decode_error='ignore',
 	preprocessor=None,
 	tokenizer=tokenizer)
 
-"""The loss='log' means we're running a logistic regression model on the training set.
+"""The loss='log_loss' means we're running a logistic regression model on the training set.
 For more information on logistic regression you can research wikipedia and YouTube."""
 clf = SGDClassifier(loss='log_loss', random_state=1, max_iter=1)
 
-doc_stream = stream_docs(path='movie_data.csv')
+doc_stream = stream_docs(path='movie.csv')
 
 # Now we can finally train our model
 pbar = pyprind.ProgBar(45)

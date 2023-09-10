@@ -7,7 +7,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 static/
-staticfiles/
 # C extensions 
 *.so
 

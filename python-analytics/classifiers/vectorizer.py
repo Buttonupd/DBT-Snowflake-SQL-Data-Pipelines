@@ -2,11 +2,12 @@ from sklearn.feature_extraction.text import HashingVectorizer
 import re
 import os
 import pickle
+from pathlib import Path
 
-# cur_dir = os.path.dirname(__file__)
+path = Path('D:\DataAnalysis\DBT_Snowflake_SQL_Airflow_Integration\python-analytics')
 stop = pickle.load(open(
 		os.path.join(
-				'D:\DataAnalysis\DBT_Snowflake_SQL_Airflow_Integration\python-analytics\pkl_objects',
+				f'{path}\pkl_objects',
 				'stopwords.pkl'
 			), 'rb'
 	))

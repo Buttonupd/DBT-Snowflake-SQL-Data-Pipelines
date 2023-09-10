@@ -8,11 +8,13 @@ from .vectorizer import vect
 import os
 import pickle
 import numpy as np
+from pathlib import Path
+from decouple import config
 
+path_Dir = config('path')
+path = Path('D:\DataAnalysis\DBT_Snowflake_SQL_Airflow_Integration\python-analytics')
 
-
-
-classifier = pickle.load(open(os.path.join('pkl_objects', 'classifier.pkl'), 'rb'))
+classifier = pickle.load(open(os.path.join(f'{path}\pkl_objects', 'classifier.pkl'), 'rb'))
 
 def classify(reviews):
 	label = {0: 'negative', 1: 'positive'}
