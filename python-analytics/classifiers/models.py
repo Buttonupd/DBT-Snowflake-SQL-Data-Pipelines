@@ -15,12 +15,14 @@ class Sentiment(models.Model):
     )
 
     COUNTRY_CHOICES = (
-		('United States of America', 'United States of America'),
-		('Canada', 'Canada'),
-		('Mexico', 'Mexico'),
-		('Europe', 'Europe'),
-		('Japan', 'Japan'),
-		('South Korea', 'South Korea'),
+		('Kenya', 'Kenya'),
+		('Uganda', 'Uganda'),
+		('Tanzania', 'Tanzania'),
+		('Rwanda ', 'Rwanda'),
+		('Congo', 'Congo'),
+		('Somalia', 'Somalia'),
+        ('South Africa', 'South Africa'),
+        ('Nigeria', 'Nigeria')
 	)
 
     movie = models.ForeignKey(Movie,on_delete=models.CASCADE)
@@ -32,6 +34,8 @@ class Sentiment(models.Model):
     timestamp = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now=True)
 
+    def __str__(self) -> str:
+        return f'{self.movie}'
 
     class Meta:
         ordering = ['-timestamp', '-updated']
