@@ -1,592 +1,292 @@
-astronomer-cosmos[dbt-bigquery]
-protobuf
+agate==1.6.3
+aiofiles==23.2.1
+aiohttp==3.8.5
+aiosignal==1.3.1
+alembic==1.11.3
+amqp==5.1.1
+antlr4-python3-runtime==4.11.1
+anyio==3.7.1
+apache-airflow==2.7.0
+apache-airflow-providers-celery==3.3.2
+apache-airflow-providers-common-sql==1.7.0
+apache-airflow-providers-ftp==3.5.0
 apache-airflow-providers-google==10.7.0
-apache-airflow[async,mssql]
-pymssql
-apache-airflow-providers-odbc
-python-decouple
-apache-airflow-providers-microsoft-mssql==3.4.2a g a t e = = 1 . 6 . 3 
- 
- a i o f i l e s = = 2 3 . 2 . 1 
- 
- a i o h t t p = = 3 . 8 . 5 
- 
- a i o s i g n a l = = 1 . 3 . 1 
- 
- a l e m b i c = = 1 . 1 1 . 3 
- 
- a m q p = = 5 . 1 . 1 
- 
- a n t l r 4 - p y t h o n 3 - r u n t i m e = = 4 . 1 1 . 1 
- 
- a n y i o = = 3 . 7 . 1 
- 
- a p a c h e - a i r f l o w = = 2 . 7 . 0 
- 
- a p a c h e - a i r f l o w - p r o v i d e r s - c e l e r y = = 3 . 3 . 2 
- 
- a p a c h e - a i r f l o w - p r o v i d e r s - c o m m o n - s q l = = 1 . 7 . 0 
- 
- a p a c h e - a i r f l o w - p r o v i d e r s - f t p = = 3 . 5 . 0 
- 
- a p a c h e - a i r f l o w - p r o v i d e r s - g o o g l e = = 1 0 . 7 . 0 
- 
- a p a c h e - a i r f l o w - p r o v i d e r s - h t t p = = 4 . 5 . 0 
- 
- a p a c h e - a i r f l o w - p r o v i d e r s - i m a p = = 3 . 3 . 0 
- 
- a p a c h e - a i r f l o w - p r o v i d e r s - m i c r o s o f t - m s s q l = = 3 . 4 . 2 
- 
- a p a c h e - a i r f l o w - p r o v i d e r s - s q l i t e = = 3 . 4 . 3 
- 
- a p i s p e c = = 6 . 3 . 0 
- 
- a r g c o m p l e t e = = 3 . 1 . 1 
- 
- a s g i r e f = = 3 . 7 . 2 
- 
- a s t r o - s d k - p y t h o n = = 1 . 7 . 0 
- 
- a s t r o n o m e r - c o s m o s = = 1 . 0 . 4 
- 
- a s y n c - t i m e o u t = = 4 . 0 . 3 
- 
- a t t r s = = 2 3 . 1 . 0 
- 
- a z u r e - c o r e = = 1 . 2 9 . 3 
- 
- a z u r e - i d e n t i t y = = 1 . 1 4 . 0 
- 
- B a b e l = = 2 . 1 2 . 1 
- 
- b a c k o f f = = 1 . 1 0 . 0 
- 
- b e t t e r p r o t o = = 1 . 2 . 5 
- 
- b i l l i a r d = = 4 . 1 . 0 
- 
- b l i n k e r = = 1 . 6 . 2 
- 
- c a c h e l i b = = 0 . 9 . 0 
- 
- c a c h e t o o l s = = 5 . 3 . 1 
- 
- c a t t r s = = 2 3 . 1 . 2 
- 
- c e l e r y = = 5 . 3 . 1 
- 
- c e r t i f i = = 2 0 2 3 . 7 . 2 2 
- 
- c f f i = = 1 . 1 5 . 1 
- 
- c h a r d e t = = 5 . 2 . 0 
- 
- c h a r s e t - n o r m a l i z e r = = 3 . 2 . 0 
- 
- c l i c k = = 8 . 1 . 3 
- 
- c l i c k - d i d y o u m e a n = = 0 . 3 . 0 
- 
- c l i c k - p l u g i n s = = 1 . 1 . 1 
- 
- c l i c k - r e p l = = 0 . 3 . 0 
- 
- c l i c k c l i c k = = 2 0 . 1 0 . 2 
- 
- c o l o r a m a = = 0 . 4 . 6 
- 
- c o l o r l o g = = 4 . 8 . 0 
- 
- C o n f i g U p d a t e r = = 3 . 1 . 1 
- 
- c o n n e x i o n = = 2 . 1 4 . 2 
- 
- c r i s p y - b o o t s t r a p 4 = = 2 0 2 2 . 1 
- 
- c r o n - d e s c r i p t o r = = 1 . 4 . 0 
- 
- c r o n i t e r = = 1 . 4 . 1 
- 
- c r y p t o g r a p h y = = 4 1 . 0 . 3 
- 
- d b - d t y p e s = = 1 . 1 . 1 
- 
- d b t - b i g q u e r y = = 1 . 4 . 4 
- 
- d b t - c o r e = = 1 . 4 . 7 
- 
- d b t - e x t r a c t o r = = 0 . 4 . 1 
- 
- d b t - s e m a n t i c - i n t e r f a c e s = = 0 . 2 . 0 
- 
- d b t - s q l s e r v e r = = 1 . 4 . 3 
- 
- D e p r e c a t e d = = 1 . 2 . 1 4 
- 
- d i l l = = 0 . 3 . 1 . 1 
- 
- d i s t l i b = = 0 . 3 . 7 
- 
- D j a n g o = = 4 . 2 . 5 
- 
- d j a n g o - c r i s p y - f o r m s = = 2 . 0 
- 
- d n s p y t h o n = = 2 . 4 . 2 
- 
- d o c u t i l s = = 0 . 2 0 . 1 
- 
- e m a i l - v a l i d a t o r = = 1 . 3 . 1 
- 
- e x c e p t i o n g r o u p = = 1 . 1 . 3 
- 
- f i l e l o c k = = 3 . 1 2 . 3 
- 
- F l a s k = = 2 . 2 . 5 
- 
- F l a s k - A p p B u i l d e r = = 4 . 3 . 3 
- 
- F l a s k - B a b e l = = 2 . 0 . 0 
- 
- F l a s k - C a c h i n g = = 2 . 0 . 2 
- 
- F l a s k - J W T - E x t e n d e d = = 4 . 5 . 2 
- 
- F l a s k - L i m i t e r = = 3 . 3 . 1 
- 
- F l a s k - L o g i n = = 0 . 6 . 2 
- 
- F l a s k - S e s s i o n = = 0 . 5 . 0 
- 
- F l a s k - S Q L A l c h e m y = = 2 . 5 . 1 
- 
- F l a s k - W T F = = 1 . 1 . 1 
- 
- f l o w e r = = 2 . 0 . 1 
- 
- f r o z e n l i s t = = 1 . 4 . 0 
- 
- f u t u r e = = 0 . 1 8 . 3 
- 
- g c l o u d - a i o - a u t h = = 4 . 2 . 3 
- 
- g c l o u d - a i o - b i g q u e r y = = 6 . 3 . 0 
- 
- g c l o u d - a i o - s t o r a g e = = 8 . 3 . 0 
- 
- g o o g l e - a d s = = 2 1 . 3 . 0 
- 
- g o o g l e - a p i - c o r e = = 2 . 1 1 . 1 
- 
- g o o g l e - a p i - p y t h o n - c l i e n t = = 2 . 9 7 . 0 
- 
- g o o g l e - a u t h = = 2 . 2 2 . 0 
- 
- g o o g l e - a u t h - h t t p l i b 2 = = 0 . 1 . 0 
- 
- g o o g l e - a u t h - o a u t h l i b = = 1 . 0 . 0 
- 
- g o o g l e - c l o u d - a i p l a t f o r m = = 1 . 3 1 . 1 
- 
- g o o g l e - c l o u d - a p p e n g i n e - l o g g i n g = = 1 . 3 . 1 
- 
- g o o g l e - c l o u d - a u d i t - l o g = = 0 . 2 . 5 
- 
- g o o g l e - c l o u d - a u t o m l = = 2 . 1 1 . 2 
- 
- g o o g l e - c l o u d - b a t c h = = 0 . 1 6 . 0 
- 
- g o o g l e - c l o u d - b i g q u e r y = = 3 . 1 1 . 4 
- 
- g o o g l e - c l o u d - b i g q u e r y - d a t a t r a n s f e r = = 3 . 1 2 . 0 
- 
- g o o g l e - c l o u d - b i g q u e r y - s t o r a g e = = 2 . 2 2 . 0 
- 
- g o o g l e - c l o u d - b i g t a b l e = = 2 . 2 1 . 0 
- 
- g o o g l e - c l o u d - b u i l d = = 3 . 2 0 . 0 
- 
- g o o g l e - c l o u d - c o m p u t e = = 1 . 1 4 . 0 
- 
- g o o g l e - c l o u d - c o n t a i n e r = = 2 . 3 0 . 0 
- 
- g o o g l e - c l o u d - c o r e = = 2 . 3 . 3 
- 
- g o o g l e - c l o u d - d a t a c a t a l o g = = 3 . 1 5 . 0 
- 
- g o o g l e - c l o u d - d a t a f l o w - c l i e n t = = 0 . 8 . 4 
- 
- g o o g l e - c l o u d - d a t a f o r m = = 0 . 5 . 2 
- 
- g o o g l e - c l o u d - d a t a p l e x = = 1 . 6 . 2 
- 
- g o o g l e - c l o u d - d a t a p r o c = = 5 . 4 . 3 
- 
- g o o g l e - c l o u d - d a t a p r o c - m e t a s t o r e = = 1 . 1 2 . 0 
- 
- g o o g l e - c l o u d - d l p = = 3 . 1 2 . 2 
- 
- g o o g l e - c l o u d - k m s = = 2 . 1 9 . 1 
- 
- g o o g l e - c l o u d - l a n g u a g e = = 2 . 1 1 . 0 
- 
- g o o g l e - c l o u d - l o g g i n g = = 3 . 6 . 0 
- 
- g o o g l e - c l o u d - m e m c a c h e = = 1 . 7 . 2 
- 
- g o o g l e - c l o u d - m o n i t o r i n g = = 2 . 1 5 . 1 
- 
- g o o g l e - c l o u d - o r c h e s t r a t i o n - a i r f l o w = = 1 . 9 . 1 
- 
- g o o g l e - c l o u d - o s - l o g i n = = 2 . 1 0 . 0 
- 
- g o o g l e - c l o u d - p u b s u b = = 2 . 1 8 . 3 
- 
- g o o g l e - c l o u d - r e d i s = = 2 . 1 3 . 1 
- 
- g o o g l e - c l o u d - r e s o u r c e - m a n a g e r = = 1 . 1 0 . 3 
- 
- g o o g l e - c l o u d - r u n = = 0 . 9 . 1 
- 
- g o o g l e - c l o u d - s e c r e t - m a n a g e r = = 2 . 1 6 . 3 
- 
- g o o g l e - c l o u d - s p a n n e r = = 3 . 4 0 . 1 
- 
- g o o g l e - c l o u d - s p e e c h = = 2 . 2 1 . 0 
- 
- g o o g l e - c l o u d - s t o r a g e = = 2 . 1 0 . 0 
- 
- g o o g l e - c l o u d - s t o r a g e - t r a n s f e r = = 1 . 9 . 1 
- 
- g o o g l e - c l o u d - t a s k s = = 2 . 1 4 . 1 
- 
- g o o g l e - c l o u d - t e x t t o s p e e c h = = 2 . 1 4 . 1 
- 
- g o o g l e - c l o u d - t r a n s l a t e = = 3 . 1 2 . 0 
- 
- g o o g l e - c l o u d - v i d e o i n t e l l i g e n c e = = 2 . 1 1 . 3 
- 
- g o o g l e - c l o u d - v i s i o n = = 3 . 4 . 4 
- 
- g o o g l e - c l o u d - w o r k f l o w s = = 1 . 1 1 . 0 
- 
- g o o g l e - c r c 3 2 c = = 1 . 5 . 0 
- 
- g o o g l e - r e 2 = = 1 . 1 
- 
- g o o g l e - r e s u m a b l e - m e d i a = = 2 . 5 . 0 
- 
- g o o g l e a p i s - c o m m o n - p r o t o s = = 1 . 6 0 . 0 
- 
- g r a p h v i z = = 0 . 2 0 . 1 
- 
- g r e e n l e t = = 2 . 0 . 2 
- 
- g r p c - g o o g l e - i a m - v 1 = = 0 . 1 2 . 6 
- 
- g r p c i o = = 1 . 5 7 . 0 
- 
- g r p c i o - g c p = = 0 . 2 . 2 
- 
- g r p c i o - s t a t u s = = 1 . 5 7 . 0 
- 
- g r p c l i b = = 0 . 4 . 5 
- 
- g u n i c o r n = = 2 1 . 2 . 0 
- 
- h 1 1 = = 0 . 1 4 . 0 
- 
- h 2 = = 4 . 1 . 0 
- 
- h o l o g r a m = = 0 . 0 . 1 6 
- 
- h p a c k = = 4 . 0 . 0 
- 
- h t t p c o r e = = 0 . 1 6 . 3 
- 
- h t t p l i b 2 = = 0 . 2 2 . 0 
- 
- h t t p x = = 0 . 2 3 . 3 
- 
- h u m a n i z e = = 4 . 8 . 0 
- 
- h y p e r f r a m e = = 6 . 0 . 1 
- 
- i d n a = = 3 . 4 
- 
- i m p o r t l i b - m e t a d a t a = = 6 . 8 . 0 
- 
- i m p o r t l i b - r e s o u r c e s = = 6 . 0 . 1 
- 
- i n f l e c t = = 6 . 2 . 0 
- 
- i n f l e c t i o n = = 0 . 5 . 1 
- 
- i s o d a t e = = 0 . 6 . 1 
- 
- i t s d a n g e r o u s = = 2 . 1 . 2 
- 
- J i n j a 2 = = 3 . 1 . 2 
- 
- j o b l i b = = 1 . 3 . 2 
- 
- j s o n - m e r g e - p a t c h = = 0 . 2 
- 
- j s o n s c h e m a = = 4 . 1 9 . 0 
- 
- j s o n s c h e m a - s p e c i f i c a t i o n s = = 2 0 2 3 . 7 . 1 
- 
- k o m b u = = 5 . 3 . 1 
- 
- l a z y - o b j e c t - p r o x y = = 1 . 9 . 0 
- 
- l e a t h e r = = 0 . 3 . 4 
- 
- l i m i t s = = 3 . 5 . 0 
- 
- l i n k i f y - i t - p y = = 2 . 0 . 2 
- 
- l o c k f i l e = = 0 . 1 2 . 2 
- 
- L o g b o o k = = 1 . 5 . 3 
- 
- l o o k e r - s d k = = 2 3 . 1 4 . 1 
- 
- M a k o = = 1 . 2 . 4 
- 
- M a r k d o w n = = 3 . 4 . 4 
- 
- m a r k d o w n - i t - p y = = 3 . 0 . 0 
- 
- M a r k u p S a f e = = 2 . 1 . 1 
- 
- m a r s h m a l l o w = = 3 . 2 0 . 1 
- 
- m a r s h m a l l o w - o n e o f s c h e m a = = 3 . 0 . 1 
- 
- m a r s h m a l l o w - s q l a l c h e m y = = 0 . 2 6 . 1 
- 
- m a s h u m a r o = = 3 . 3 . 1 
- 
- m d i t - p y - p l u g i n s = = 0 . 4 . 0 
- 
- m d u r l = = 0 . 1 . 2 
- 
- m i n i m a l - s n o w p l o w - t r a c k e r = = 0 . 0 . 2 
- 
- m o r e - i t e r t o o l s = = 8 . 1 4 . 0 
- 
- m s a l = = 1 . 2 3 . 0 
- 
- m s a l - e x t e n s i o n s = = 1 . 0 . 0 
- 
- m s g p a c k = = 1 . 0 . 5 
- 
- m u l t i d i c t = = 6 . 0 . 4 
- 
- n e t w o r k x = = 2 . 8 . 8 
- 
- n l t k = = 3 . 8 . 1 
- 
- n u m p y = = 1 . 2 5 . 2 
- 
- o a u t h l i b = = 3 . 2 . 2 
- 
- o p e n t e l e m e t r y - a p i = = 1 . 1 5 . 0 
- 
- o p e n t e l e m e t r y - e x p o r t e r - o t l p = = 1 . 1 5 . 0 
- 
- o p e n t e l e m e t r y - e x p o r t e r - o t l p - p r o t o - g r p c = = 1 . 1 5 . 0 
- 
- o p e n t e l e m e t r y - e x p o r t e r - o t l p - p r o t o - h t t p = = 1 . 1 5 . 0 
- 
- o p e n t e l e m e t r y - p r o t o = = 1 . 1 5 . 0 
- 
- o p e n t e l e m e t r y - s d k = = 1 . 1 5 . 0 
- 
- o p e n t e l e m e t r y - s e m a n t i c - c o n v e n t i o n s = = 0 . 3 6 b 0 
- 
- o r d e r e d - s e t = = 4 . 1 . 0 
- 
- p a c k a g i n g = = 2 3 . 1 
- 
- p a n d a s = = 2 . 0 . 3 
- 
- p a n d a s - g b q = = 0 . 1 9 . 2 
- 
- p a r s e d a t e t i m e = = 2 . 4 
- 
- p a t h s p e c = = 0 . 1 0 . 3 
- 
- p e n d u l u m = = 2 . 1 . 2 
- 
- p l a t f o r m d i r s = = 3 . 1 0 . 0 
- 
- p l u g g y = = 1 . 2 . 0 
- 
- p o r t a l o c k e r = = 2 . 7 . 0 
- 
- p r i s o n = = 0 . 2 . 1 
- 
- p r o m e t h e u s - c l i e n t = = 0 . 1 7 . 1 
- 
- p r o m p t - t o o l k i t = = 3 . 0 . 3 9 
- 
- p r o t o - p l u s = = 1 . 2 2 . 3 
- 
- p r o t o b u f = = 4 . 2 1 . 1 2 
- 
- p s u t i l = = 5 . 9 . 5 
- 
- p y a r r o w = = 1 3 . 0 . 0 
- 
- p y a s n 1 = = 0 . 4 . 8 
- 
- p y a s n 1 - m o d u l e s = = 0 . 2 . 8 
- 
- p y c p a r s e r = = 2 . 2 1 
- 
- p y d a n t i c = = 1 . 1 0 . 1 2 
- 
- p y d a t a - g o o g l e - a u t h = = 1 . 8 . 2 
- 
- P y g m e n t s = = 2 . 1 6 . 1 
- 
- P y J W T = = 2 . 8 . 0 
- 
- p y m s s q l = = 2 . 2 . 8 
- 
- p y o d b c = = 4 . 0 . 3 9 
- 
- p y O p e n S S L = = 2 3 . 2 . 0 
- 
- p y p a r s i n g = = 3 . 1 . 1 
- 
- P y P r i n d = = 2 . 1 1 . 3 
- 
- p y r s i s t e n t = = 0 . 1 9 . 3 
- 
- p y t h o n - d a e m o n = = 3 . 0 . 1 
- 
- p y t h o n - d a t e u t i l = = 2 . 8 . 2 
- 
- p y t h o n - d e c o u p l e = = 3 . 8 
- 
- p y t h o n - d o t e n v = = 1 . 0 . 0 
- 
- p y t h o n - f r o n t m a t t e r = = 1 . 0 . 0 
- 
- p y t h o n - n v d 3 = = 0 . 1 5 . 0 
- 
- p y t h o n - s l u g i f y = = 8 . 0 . 1 
- 
- p y t i m e p a r s e = = 1 . 1 . 8 
- 
- p y t z = = 2 0 2 3 . 3 
- 
- p y t z d a t a = = 2 0 2 0 . 1 
- 
- p y w i n 3 2 = = 3 0 6 
- 
- P y Y A M L = = 6 . 0 . 1 
- 
- r e f e r e n c i n g = = 0 . 3 0 . 2 
- 
- r e g e x = = 2 0 2 3 . 8 . 8 
- 
- r e q u e s t s = = 2 . 3 1 . 0 
- 
- r e q u e s t s - o a u t h l i b = = 1 . 3 . 1 
- 
- r e q u e s t s - t o o l b e l t = = 1 . 0 . 0 
- 
- r f c 3 3 3 9 - v a l i d a t o r = = 0 . 1 . 4 
- 
- r f c 3 9 8 6 = = 1 . 5 . 0 
- 
- r i c h = = 1 3 . 5 . 2 
- 
- r i c h - a r g p a r s e = = 1 . 2 . 0 
- 
- r p d s - p y = = 0 . 9 . 2 
- 
- r s a = = 4 . 9 
- 
- r u a m e l . y a m l = = 0 . 1 7 . 3 2 
- 
- r u a m e l . y a m l . c l i b = = 0 . 2 . 7 
- 
- s c i k i t - l e a r n = = 1 . 3 . 0 
- 
- s c i p y = = 1 . 1 1 . 2 
- 
- s e t p r o c t i t l e = = 1 . 3 . 2 
- 
- S h a p e l y = = 1 . 8 . 5 . p o s t 1 
- 
- s i x = = 1 . 1 6 . 0 
- 
- s m a r t - o p e n = = 6 . 3 . 0 
- 
- s n i f f i o = = 1 . 3 . 0 
- 
- s o d a - c o r e = = 3 . 0 . 4 5 
- 
- S Q L A l c h e m y = = 1 . 4 . 4 9 
- 
- s q l a l c h e m y - b i g q u e r y = = 1 . 8 . 0 
- 
- S Q L A l c h e m y - J S O N F i e l d = = 1 . 0 . 1 . p o s t 0 
- 
- s q l a l c h e m y - s p a n n e r = = 1 . 6 . 2 
- 
- S Q L A l c h e m y - U t i l s = = 0 . 4 1 . 1 
- 
- s q l p a r s e = = 0 . 4 . 3 
- 
- s t r i n g c a s e = = 1 . 2 . 0 
- 
- t a b u l a t e = = 0 . 9 . 0 
- 
- t e n a c i t y = = 8 . 2 . 3 
- 
- t e r m c o l o r = = 2 . 3 . 0 
- 
- t e x t - u n i d e c o d e = = 1 . 3 
- 
- t h r e a d p o o l c t l = = 3 . 2 . 0 
- 
- t o r n a d o = = 6 . 3 . 3 
- 
- t q d m = = 4 . 6 6 . 1 
- 
- t y p i n g _ e x t e n s i o n s = = 4 . 7 . 1 
- 
- t z d a t a = = 2 0 2 3 . 3 
- 
- u c - m i c r o - p y = = 1 . 0 . 2 
- 
- u n i c o d e c s v = = 0 . 1 4 . 1 
- 
- u r i t e m p l a t e = = 4 . 1 . 1 
- 
- u r l l i b 3 = = 1 . 2 6 . 1 6 
- 
- v i n e = = 5 . 0 . 0 
- 
- v i r t u a l e n v = = 2 0 . 2 4 . 4 
- 
- w c w i d t h = = 0 . 2 . 6 
- 
- W e r k z e u g = = 2 . 2 . 3 
- 
- w h i t e n o i s e = = 6 . 5 . 0 
- 
- w r a p t = = 1 . 1 5 . 0 
- 
- W T F o r m s = = 3 . 0 . 1 
- 
- y a r l = = 1 . 9 . 2 
- 
- z i p p = = 3 . 1 6 . 2 
- 
- 
+apache-airflow-providers-http==4.5.0
+apache-airflow-providers-imap==3.3.0
+apache-airflow-providers-microsoft-mssql==3.4.2
+apache-airflow-providers-sqlite==3.4.3
+apispec==6.3.0
+argcomplete==3.1.1
+asgiref==3.7.2
+astro-sdk-python==1.7.0
+astronomer-cosmos==1.0.4
+async-timeout==4.0.3
+attrs==23.1.0
+azure-core==1.29.3
+azure-identity==1.14.0
+Babel==2.12.1
+backoff==1.10.0
+betterproto==1.2.5
+billiard==4.1.0
+blinker==1.6.2
+cachelib==0.9.0
+cachetools==5.3.1
+cattrs==23.1.2
+celery==5.3.1
+certifi==2023.7.22
+cffi==1.15.1
+chardet==5.2.0
+charset-normalizer==3.2.0
+click==8.1.3
+click-didyoumean==0.3.0
+click-plugins==1.1.1
+click-repl==0.3.0
+clickclick==20.10.2
+colorama==0.4.6
+colorlog==4.8.0
+ConfigUpdater==3.1.1
+connexion==2.14.2
+crispy-bootstrap4==2022.1
+cron-descriptor==1.4.0
+croniter==1.4.1
+cryptography==41.0.3
+db-dtypes==1.1.1
+dbt-bigquery==1.4.4
+dbt-core==1.4.7
+dbt-extractor==0.4.1
+dbt-semantic-interfaces==0.2.0
+dbt-sqlserver==1.4.3
+Deprecated==1.2.14
+dill==0.3.1.1
+distlib==0.3.7
+Django==4.2.5
+django-crispy-forms==2.0
+dnspython==2.4.2
+docutils==0.20.1
+email-validator==1.3.1
+exceptiongroup==1.1.3
+filelock==3.12.3
+Flask==2.2.5
+Flask-AppBuilder==4.3.3
+Flask-Babel==2.0.0
+Flask-Caching==2.0.2
+Flask-JWT-Extended==4.5.2
+Flask-Limiter==3.3.1
+Flask-Login==0.6.2
+Flask-Session==0.5.0
+Flask-SQLAlchemy==2.5.1
+Flask-WTF==1.1.1
+flower==2.0.1
+frozenlist==1.4.0
+future==0.18.3
+gcloud-aio-auth==4.2.3
+gcloud-aio-bigquery==6.3.0
+gcloud-aio-storage==8.3.0
+google-ads==21.3.0
+google-api-core==2.11.1
+google-api-python-client==2.97.0
+google-auth==2.22.0
+google-auth-httplib2==0.1.0
+google-auth-oauthlib==1.0.0
+google-cloud-aiplatform==1.31.1
+google-cloud-appengine-logging==1.3.1
+google-cloud-audit-log==0.2.5
+google-cloud-automl==2.11.2
+google-cloud-batch==0.16.0
+google-cloud-bigquery==3.11.4
+google-cloud-bigquery-datatransfer==3.12.0
+google-cloud-bigquery-storage==2.22.0
+google-cloud-bigtable==2.21.0
+google-cloud-build==3.20.0
+google-cloud-compute==1.14.0
+google-cloud-container==2.30.0
+google-cloud-core==2.3.3
+google-cloud-datacatalog==3.15.0
+google-cloud-dataflow-client==0.8.4
+google-cloud-dataform==0.5.2
+google-cloud-dataplex==1.6.2
+google-cloud-dataproc==5.4.3
+google-cloud-dataproc-metastore==1.12.0
+google-cloud-dlp==3.12.2
+google-cloud-kms==2.19.1
+google-cloud-language==2.11.0
+google-cloud-logging==3.6.0
+google-cloud-memcache==1.7.2
+google-cloud-monitoring==2.15.1
+google-cloud-orchestration-airflow==1.9.1
+google-cloud-os-login==2.10.0
+google-cloud-pubsub==2.18.3
+google-cloud-redis==2.13.1
+google-cloud-resource-manager==1.10.3
+google-cloud-run==0.9.1
+google-cloud-secret-manager==2.16.3
+google-cloud-spanner==3.40.1
+google-cloud-speech==2.21.0
+google-cloud-storage==2.10.0
+google-cloud-storage-transfer==1.9.1
+google-cloud-tasks==2.14.1
+google-cloud-texttospeech==2.14.1
+google-cloud-translate==3.12.0
+google-cloud-videointelligence==2.11.3
+google-cloud-vision==3.4.4
+google-cloud-workflows==1.11.0
+google-crc32c==1.5.0
+google-re2==1.1
+google-resumable-media==2.5.0
+googleapis-common-protos==1.60.0
+graphviz==0.20.1
+greenlet==2.0.2
+grpc-google-iam-v1==0.12.6
+grpcio==1.57.0
+grpcio-gcp==0.2.2
+grpcio-status==1.57.0
+grpclib==0.4.5
+gunicorn==21.2.0
+h11==0.14.0
+h2==4.1.0
+hologram==0.0.16
+hpack==4.0.0
+httpcore==0.16.3
+httplib2==0.22.0
+httpx==0.23.3
+humanize==4.8.0
+hyperframe==6.0.1
+idna==3.4
+importlib-metadata==6.8.0
+importlib-resources==6.0.1
+inflect==6.2.0
+inflection==0.5.1
+isodate==0.6.1
+itsdangerous==2.1.2
+Jinja2==3.1.2
+joblib==1.3.2
+json-merge-patch==0.2
+jsonschema==4.19.0
+jsonschema-specifications==2023.7.1
+kombu==5.3.1
+lazy-object-proxy==1.9.0
+leather==0.3.4
+limits==3.5.0
+linkify-it-py==2.0.2
+lockfile==0.12.2
+Logbook==1.5.3
+looker-sdk==23.14.1
+Mako==1.2.4
+Markdown==3.4.4
+markdown-it-py==3.0.0
+MarkupSafe==2.1.1
+marshmallow==3.20.1
+marshmallow-oneofschema==3.0.1
+marshmallow-sqlalchemy==0.26.1
+mashumaro==3.3.1
+mdit-py-plugins==0.4.0
+mdurl==0.1.2
+minimal-snowplow-tracker==0.0.2
+more-itertools==8.14.0
+msal==1.23.0
+msal-extensions==1.0.0
+msgpack==1.0.5
+multidict==6.0.4
+networkx==2.8.8
+nltk==3.8.1
+numpy==1.25.2
+oauthlib==3.2.2
+opentelemetry-api==1.15.0
+opentelemetry-exporter-otlp==1.15.0
+opentelemetry-exporter-otlp-proto-grpc==1.15.0
+opentelemetry-exporter-otlp-proto-http==1.15.0
+opentelemetry-proto==1.15.0
+opentelemetry-sdk==1.15.0
+opentelemetry-semantic-conventions==0.36b0
+ordered-set==4.1.0
+packaging==23.1
+pandas==2.0.3
+pandas-gbq==0.19.2
+parsedatetime==2.4
+pathspec==0.10.3
+pendulum==2.1.2
+platformdirs==3.10.0
+pluggy==1.2.0
+portalocker==2.7.0
+prison==0.2.1
+prometheus-client==0.17.1
+prompt-toolkit==3.0.39
+proto-plus==1.22.3
+protobuf==4.21.12
+psutil==5.9.5
+pyarrow==13.0.0
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycparser==2.21
+pydantic==1.10.12
+pydata-google-auth==1.8.2
+Pygments==2.16.1
+PyJWT==2.8.0
+pymssql==2.2.8
+pyodbc==4.0.39
+pyOpenSSL==23.2.0
+pyparsing==3.1.1
+PyPrind==2.11.3
+pyrsistent==0.19.3
+python-daemon==3.0.1
+python-dateutil==2.8.2
+python-decouple==3.8
+python-dotenv==1.0.0
+python-frontmatter==1.0.0
+python-nvd3==0.15.0
+python-slugify==8.0.1
+pytimeparse==1.1.8
+pytz==2023.3
+pytzdata==2020.1
+pywin32==306
+PyYAML==6.0.1
+referencing==0.30.2
+regex==2023.8.8
+requests==2.31.0
+requests-oauthlib==1.3.1
+requests-toolbelt==1.0.0
+rfc3339-validator==0.1.4
+rfc3986==1.5.0
+rich==13.5.2
+rich-argparse==1.2.0
+rpds-py==0.9.2
+rsa==4.9
+ruamel.yaml==0.17.32
+ruamel.yaml.clib==0.2.7
+scikit-learn==1.3.0
+scipy==1.11.2
+setproctitle==1.3.2
+Shapely==1.8.5.post1
+six==1.16.0
+smart-open==6.3.0
+sniffio==1.3.0
+soda-core==3.0.45
+SQLAlchemy==1.4.49
+sqlalchemy-bigquery==1.8.0
+SQLAlchemy-JSONField==1.0.1.post0
+sqlalchemy-spanner==1.6.2
+SQLAlchemy-Utils==0.41.1
+sqlparse==0.4.3
+stringcase==1.2.0
+tabulate==0.9.0
+tenacity==8.2.3
+termcolor==2.3.0
+text-unidecode==1.3
+threadpoolctl==3.2.0
+tornado==6.3.3
+tqdm==4.66.1
+typing_extensions==4.7.1
+tzdata==2023.3
+uc-micro-py==1.0.2
+unicodecsv==0.14.1
+uritemplate==4.1.1
+urllib3==1.26.16
+vine==5.0.0
+virtualenv==20.24.4
+wcwidth==0.2.6
+Werkzeug==2.2.3
+whitenoise==6.5.0
+wrapt==1.15.0
+WTForms==3.0.1
+yarl==1.9.2
+zipp==3.16.2
