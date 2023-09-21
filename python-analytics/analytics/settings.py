@@ -25,7 +25,8 @@ INSTALLED_APPS = [
     'classifiers',
     # thirdparty
     'crispy_forms',
-    'crispy_bootstrap4'
+    'crispy_bootstrap4',
+    'rest_framework'
 ]
 CORS_ORIGIN_ALLOW_ALL = True
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
