@@ -34,8 +34,5 @@ class Sentiment(models.Model):
     timestamp = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now=True)
 
-    def __str__(self) -> str:
-        return f'{self.movie}'
-
     class Meta:
         ordering = ['-timestamp', '-updated']
