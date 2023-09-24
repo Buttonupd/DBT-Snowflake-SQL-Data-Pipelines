@@ -87,7 +87,7 @@ def get_sentiment_data(env=None):
 	if env == "development":
 		URL = 'http://127.0.0.1:8000/api-auth/login/'
 	else:
-		URL = 'https://data-bore.herokuapp.com/api-auth/login/'
+		URL = ''
 
 	client = requests.session()
 	client.get(URL)
