@@ -1,8 +1,20 @@
 version: 2
 
 sources:
-    - name: imdb
-      database: source-datasets
-
+# Define Source Datasets
+    - name: dbo
+      database: UNDT_SACCO_Staging
       tables:
-        - name: raw_imdb
+        - name: Vendor
+# Define Staging Datasets
+    - name: dbo
+      database: DATAWAREHOUSE
+      tables:
+        - name: Comm
+# Define Operational Data Store Datasets
+    - name : schema
+      database: Database_Name
+      tables:
+        - name: Table_Name
+
+        

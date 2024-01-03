@@ -6,9 +6,7 @@ use the movie_and_demographic_data.csv for its pandas DataFrame.  And will allow
 the Dash up in a stand-alone fashion."""
 
 import os
-
 from dotenv import load_dotenv
-
 import requests
 import json
 import bz2
@@ -16,8 +14,8 @@ import dash
 from dash import dcc
 from dash import html
 import plotly.express as px
-
 import pandas as pd
+from decouple import config
 
 load_dotenv()
 
@@ -87,7 +85,8 @@ def get_sentiment_data(env=None):
 	if env == "development":
 		URL = 'http://127.0.0.1:8000/api-auth/login/'
 	else:
-		URL = ''
+		# ec2 instance - cloud hosted
+		URL = 'https://Idatedata.com'
 
 	client = requests.session()
 	client.get(URL)
@@ -97,8 +96,8 @@ def get_sentiment_data(env=None):
 		csrftoken = client.cookies['csrf']
 
 	login_data = dict(
-		username='YOUR_Postgres_Instance_Superuser_Username',
-		password='YOUR_Postgres_Instance_Superuser_Password',
+		username='postgres',
+		password='postgres',
 		csrfmiddlewaretoken=csrftoken,
 		next='/api/sentiment/'
 	)
@@ -229,15 +228,10 @@ def serve_layout_local():
 		html.Br()
 	])
 
-
-
 if api_is_up == 'True':
-	app.layout = serve_layout
+	app.layout = serve_layout()
 if api_is_up == 'False':
-	app.layout = serve_layout_local
-
-
-
+	app.layout = serve_layout_local()
 
 if __name__ == '__main__':
 	app.run_server(debug=True)

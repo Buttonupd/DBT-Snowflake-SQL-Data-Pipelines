@@ -1,5 +1,5 @@
-from cosmos.config import ProfileConfig,ProjectConfig
-from pathlib import Path
+from cosmos.config import ProfileConfig, ProjectConfig
+from pathlib import Path 
 
 DBT_CONFIG = ProfileConfig(
     profile_name='imdb',

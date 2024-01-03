@@ -1,3 +1,5 @@
+# Google cloud sdk
+
 import csv
 from io import StringIO
 from google.cloud import storage
@@ -22,8 +24,6 @@ def download_to_path():
         writer.writerows([name for name in names])
         return
     
-            
-
 download_to_path()
 
-    
+

@@ -4,4 +4,4 @@ dbt_packages/
 logs/
 gcp/service_acc.json
 soda/configuration.yml
-profiles.yml
+

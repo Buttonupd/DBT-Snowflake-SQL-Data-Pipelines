@@ -1,0 +1,21 @@
+imdb:
+  target: development_sql
+  outputs:
+    production_sql:
+      database: DATAWAREHOUSE
+      driver: ODBC Driver 18 for SQL Server
+      port: 1433
+      schema: dbo
+      server: DKARIUKI-PC\BASESSQL_SERVER
+      trust_cert: true
+      type: sqlserver
+      windows_login: true
+    development_sql:
+      database: UNDT_SACCO_Staging
+      driver: ODBC Driver 18 for SQL Server
+      port: 1433
+      schema: dbo
+      server: DKARIUKI-PC\BASESSQL_SERVER
+      trust_cert: true
+      type: sqlserver
+      windows_login: true
