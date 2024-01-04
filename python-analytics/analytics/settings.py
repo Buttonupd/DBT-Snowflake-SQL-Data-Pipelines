@@ -22,11 +22,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # local apps
-    'classifiers',
     # thirdparty
     'crispy_forms',
     'crispy_bootstrap4',
-    'rest_framework'
+    'rest_framework',
+    'classifiers'
 ]
 
 REST_FRAMEWORK = {
@@ -54,7 +54,7 @@ ROOT_URLCONF = 'analytics.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
