@@ -72,15 +72,21 @@ MODE=config('MODE')
 SECRET_KEY =config('SECRET')
 DEBUG =config('DEBUG')
 
+host = os.getenv('AZURE_POSTGRESQL_HOST')
+user = os.getenv('AZURE_POSTGRESQL_USER')
+password = os.getenv('AZURE_POSTGRESQL_PASSWORD')
+database = os.getenv('AZURE_POSTGRESQL_NAME')
+
 if config('MODE')=="dev":
    DATABASES = {
        'default': {
            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': config('NAME'),
-           'USER': config('USER'),
-           'PASSWORD': config('PASSWORD'),
-           'HOST': config('HOST'),
-           'PORT': config('PORT')
+           'NAME': database,
+           'USER': user,
+           'PASSWORD': password,
+           'HOST': host,
+        #    'PORT': config('PORT'),
+           'OPTIONS': {'sslmode': 'require'},
        }
 
    }
